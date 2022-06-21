@@ -32,12 +32,18 @@ async function handleClearCEP() {
 
   return (
     <div className="container">
+      
       <header className="header">      
-        <a href="#"><FiGithub className="stroke" size={25}/></a>
-        <a href="#"><FiLinkedin className="stroke" size={25}/></a>
+        <a href="https://github.com/whyleonardo" target="_blank">
+          <FiGithub className="stroke" size={25}/>
+        </a>
+        <a href="https://www.linkedin.com/in/whyleonardo" target="_blank">
+          <FiLinkedin className="stroke" size={25}/>
+        </a>
       </header>
-
-
+    
+    <section className="area-section">
+      {/* TITLE */}
       <h1 className="title">Buscador de CEP</h1>
 
       <div className="ctn-input">
@@ -48,19 +54,21 @@ async function handleClearCEP() {
           value={input}
           onChange={(event) => setInput(event.target.value)}
         />  
+
         <button className="btn-search" onClick={handleSearch}>
           <BiSearchAlt/>
         </button>
       </div> 
-          
+    </section>   
+
     {Object.keys(cep).length > 1 && (
        <>
         <main className="main">
-          <h2>CEP: {cep.cep}</h2>
+          <h2 className="info info-cep">CEP: {cep.cep}</h2>
                 
-          <span>{cep.logradouro}</span>
-          <span>Bairro {cep.bairro}</span>
-          <span>{cep.localidade} - {cep.uf}</span>
+          <span className="info info-logradouro">{cep.logradouro}</span>
+          <span className="info info-bairro">{cep.bairro}</span>
+          <span className="info info-localidade">{cep.localidade} - {cep.uf}</span>
         </main>
 
         <button className="btn-clear" onClick={handleClearCEP}>
@@ -68,9 +76,7 @@ async function handleClearCEP() {
         </button>
       </>
     )}
-
       <footer>
-        
         <span>Desenvolvido por Christian Leonardo</span>
       </footer>
 

@@ -13,11 +13,9 @@ input::-webkit-inner-spin-button {
 
 button {
   cursor: pointer;
-
   border: 0;
 }
 
 a {
   text-decoration: none;
-  color: white;
 }
